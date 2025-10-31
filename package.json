@@ -1,0 +1,35 @@
+{
+  "name": "vulnerable-app",
+  "version": "1.0.0",
+  "description": "A vulnerable web application for security scanning practice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "mysql": "^2.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "xml2js": "^0.4.23",
+    "cookie-parser": "^1.4.5",
+    "eval": "^0.1.0",
+    "serialize-javascript": "^2.1.2",
+    "express-session": "^1.17.1",
+    "bcryptjs": "^2.4.3",
+    "axios": "^0.19.2",
+    "marked": "^0.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "keywords": [
+    "vulnerable",
+    "security",
+    "pentesting"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

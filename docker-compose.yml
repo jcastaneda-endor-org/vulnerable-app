@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./uploads:/app/uploads
+      - ./files:/app/files
+    depends_on:
+      - db
+    networks:
+      - vulnerable-network
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: vulnerable_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - vulnerable-network
+
+volumes:
+  db-data:
+
+networks:
+  vulnerable-network:
+    driver: bridge
+
